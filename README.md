@@ -37,3 +37,9 @@ If you don’t want to use these defaults, move pages from the `_no-index` folde
 - [ ] I’m still not happy with the internal navigation, want to clean it up a bit 
 - [ ] Add a bit more clear documentation about social images 
 - [ ] More detailed documentation about the now posts 
+
+## Creative Commons 0 
+
+I release all of the code and content of this repository under the [Creative Commons Zero](https://creativecommons.org/publicdomain/zero/1.0/) license. You’re free to copy, reuse, modify or do whatever you want with it. 
+
+You don’t have to attribute it, but it would be nice to add a link to [my site](https://derekkedziora.com) or this repo.  
