@@ -2,6 +2,8 @@
 
 This has everything you need to get started using my personal site, [derekkedziora.com](https://derekkedziora.com), as a template for your own Jekyll site. 
 
+You can view this template live via Netlify at [https://fastidious-eclair-6c7bfe.netlify.app](https://fastidious-eclair-6c7bfe.netlify.app). I use Netlify because of the way GitHub Pages works breaks relative URLs unless you have a custom domain. 
+
 I’ve removed all of my information and content, included some examples and added a bit of documentation. It’s not a true theme, so will require some basic coding knowledge to adapt it to your needs. 
 
 ## Getting started 
