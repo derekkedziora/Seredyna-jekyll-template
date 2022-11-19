@@ -13,7 +13,7 @@ permalink: /notes
 
 ## What are notes?
 
-This is a microblog for frequent, shorter thoughts, interesting links and shaping ideas before they become full posts. The best way to follow is via [my RSS feed](https://derekkedziora.com/rss).
+This is a microblog for frequent, shorter thoughts, interesting links and shaping ideas before they become full posts. The best way to follow is via [the RSS feed](/rss).
 
 </div>
 
