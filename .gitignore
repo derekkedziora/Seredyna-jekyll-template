@@ -13,9 +13,5 @@ _site/
 # jekyll cahce
 .jekyll-cache/
 
-# gemlock
-Gemfile 
-Gemfile.lock
-
 # Google Drive sync 
 .tmp.driveupload/
