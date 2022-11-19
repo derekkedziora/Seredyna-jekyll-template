@@ -22,10 +22,15 @@
     <!-- OG metadata --> 
     <meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    {% unless page.social-media-image == false %}
-    <meta property="og:image" content="{% if page.social-media-image %}{{ page.social-media-image}}{% else %}{{ site.social-media-image }}{% endif %}"/>
-    {% endunless %}
-
+    {% if page.social-media-image %} 
+    <meta property="og:image" 
+        content="{%- if page.social-media-image -%}
+        {%- if page.social-media-image-url -%}{{ page.social-media-image-url }}
+        {%- else -%}
+        {{ site.social-media-image-url }}
+        {%- endif -%}
+        {%- endif -%}"/>
+    {% endif %}    
     <meta property="og:locale" content="{{ site.language }}">
     <meta property="og:type" content="{% if page.og-type %}{{page.og-type}}{% else %}website{% endif %}"/>
     <meta property="og:url" content="{{ page.url | absolute_url }}"/>
@@ -37,7 +42,6 @@
     <meta name="twitter:title" content="{%- if page.title -%}{{ page.title }}{%- else -%}{{ site.title }}{%- endif -%}"/>
     <meta name="twitter:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}"/>
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
-    {% unless page.social-media-image == false %}
     <meta name="twitter:image" content="{% if page.twitter-card-image %}{{ page.twitter-card-image }}{% else %}{{ site.twitter-card-image }}{% endif %}"/>
     {% endunless %}
 

@@ -8,6 +8,6 @@ permalink: /rss
 If you’re new to RSS, [check out this guide](https://derekkedziora.com/blog/rss-guide).
 
 
-The [everything feed]({{ site.url }}/feed.xml) contains, well, everything including new posts and notes. 
+The [everything feed](/feed.xml) contains, well, everything including new posts and notes. 
 
-[This feed]({{ site.url }}/feed/essays.xml) contains only posts. 
+[This feed](/feed/essays.xml) contains only posts. 

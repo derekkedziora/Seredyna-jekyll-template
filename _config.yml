@@ -6,14 +6,14 @@ email: "exmaple@exmple.com"
 description: "A template created by Derek Kedziora"
 github: derekkedziora
 timezone: Europe/Amsterdam
-url: https://seredyna.netlify.app
+url: https://seredyna.netlify.app/
 language: en_US
 
 # social images
 
 favicon: /static/social-media-images/borshch-and-salo-favicon.jpeg
 twitter: "@good-luck-twitter-existing-in-a-few-years"
-social-media-image: /static/social-media-images/borshch-and-salo.jpeg
+social-media-image-url: /static/social-media-images/borshch-and-salo.jpeg
 twitter-card-image: /static/social-media-images/borshch-and-salo-twitter.jpeg
 iOS-icon: /static/social-media-images/borshch-and-salo-ios.jpeg
 
@@ -32,14 +32,15 @@ defaults:
       blogpost: true
       layout: post
       og-type: article
-      permalink: /blog/:title
+      social-media-image: false
     
   -    
     scope:
       path: ""
       type: "pages"
     values:
-      layout: page    
+      layout: page 
+      social-media-image: false   
 
   -    
     scope:
@@ -48,6 +49,7 @@ defaults:
     values:
       layout: page
       no-index: true
+      social-media-image: false
 
 collections:
   pages:
