@@ -25,7 +25,7 @@ By default only 10 notes are displayed on the site at a time, although the perma
 
 ## Blocked from Google by default 
 
-The main page, about, portfolio page and blog posts under the category `essay` are all visible to search engines by default. My assumption is this is the sort of evergreen content that you want to display to world and be found by.
+The main page, about, portfolio page and blog posts under the category `essays` are all visible to search engines by default. My assumption is this is the sort of evergreen content that you want to display to world and be found by.
 
 Notes and rss-club posts are blocked from search engines by default. These are more experimental posts that are meant to be more private and fleeting. Not everything needs to be remembered until the end of the internet. 
 
