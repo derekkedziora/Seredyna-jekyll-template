@@ -1,0 +1,42 @@
+<script>
+
+// Add as many pictures as you'd like to the array "photos"
+
+function getAboutPicture() {
+	const photos = [
+		"/static/about-pictures/about-asleep.jpeg", 
+		"/static/about-pictures/about-christmas.jpeg", 
+		"/static/about-pictures/about-tub.jpeg", 
+		"/static/about-pictures/about-desk.jpeg", 
+		"/static/about-pictures/about-deck.jpeg"
+	]
+
+	let currentPhoto = sessionStorage.getItem("currentPhoto");
+
+
+	if (!currentPhoto) {
+		let selectedPhoto = Math.floor(Math.random() * photos.length)
+		document.getElementById("aboutImg").setAttribute("src", photos[selectedPhoto]);
+		sessionStorage.setItem("currentPhoto", photos[selectedPhoto]);
+	} else {
+		let updatedPhotoList = [];
+		let i = 0; 
+		do 
+			if (photos[i] !== currentPhoto) {
+				updatedPhotoList.push(photos[i]);
+				i++;
+			} else {
+				i++;
+			}
+		while (i < photos.length) 
+
+		let selectedPhoto = Math.floor(Math.random() * updatedPhotoList.length);
+		document.getElementById("aboutImg").setAttribute("src", updatedPhotoList[selectedPhoto]);
+		sessionStorage.setItem("currentPhoto", updatedPhotoList[selectedPhoto]);
+	}
+
+}
+
+getAboutPicture();
+
+</script>

@@ -1,0 +1,68 @@
+# Customize these with your info 
+
+title: "Seredyna, a Jekyll Template" 
+author: Your Name
+email: "exmaple@exmple.com"
+description: "A template created by Derek Kedziora"
+github: derekkedziora
+timezone: Europe/Amsterdam
+url: https:example.com
+language: en_US
+
+# social images
+
+favicon: /static/social-media-images/borshch-and-salo-favicon.jpeg
+twitter: "@good-luck-twitter-existing-in-a-few-years"
+social-media-image: /static/social-media-images/borshch-and-salo.jpeg
+twitter-card-image: /static/social-media-images/borshch-and-salo-twitter.jpeg
+iOS-icon: /static/social-media-images/borshch-and-salo-ios.jpeg
+
+# leave these unless you are more familiar with jekyll settings
+
+highlighter: rouge
+markdown: kramdown
+parse_block_html: false
+show_drafts: true
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      blogpost: true
+      layout: post
+      og-type: article
+      permalink: /blog/:title
+    
+  -    
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page    
+
+  -    
+    scope:
+      path: ""
+      type: "no-index"
+    values:
+      layout: page
+      no-index: true
+
+collections:
+  pages:
+    output: true
+  no-index:
+    output: true
+  unlisted:
+    output: true
+
+plugins:
+  - jekyll-feed
+
+feed:
+  posts_limit: 25
+  categories:
+    - essays
+    - notes
+    - now

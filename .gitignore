@@ -1,0 +1,21 @@
+# drafts folder
+_drafts/
+
+# Mac system files
+.DS_Store
+assets/.DS_Store
+static/.DS_Store
+_includes/.DS_Store
+
+# generated site folder
+_site/
+
+# jekyll cahce
+.jekyll-cache/
+
+# gemlock
+Gemfile 
+Gemfile.lock
+
+# Google Drive sync 
+.tmp.driveupload/

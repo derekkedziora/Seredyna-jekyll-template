@@ -1,0 +1,62 @@
+---
+title: ""
+customTitle: true
+permalink: /blog/random
+layout: page
+---
+
+{%- assign totalNumberOfPosts = site.categories.essays | size -%}
+{%- assign NumberOfRSSClubPosts = site.categories.rss-club | size -%}
+{%- assign i = totalNumberOfPosts | minus: NumberOfRSSClubPosts -%}
+
+<script>
+
+const allPosts = 
+    [{%- for post in site.categories.essays -%}
+    
+    {%- unless post.categories contains "rss-club" -%}
+      {%- assign i = i | minus: 1 -%}
+      "{{ post.url }}"{% unless i == 0 %},{% endunless %}
+    {%- endunless -%}
+
+    {%- endfor -%}];
+
+  
+  function linkToRandomBlogPost() {
+      let lastRandomPostLink = sessionStorage.getItem("lastRandomPostLink");
+
+      if (!lastRandomPostLink) {
+
+        let randomPostLink = allPosts[Math.floor(Math.random() * allPosts.length)];
+        sessionStorage.setItem("lastRandomPostLink", randomPostLink);
+        return randomPostLink;
+      } else {
+
+          let updatedPostList = [];
+          let i = 0; 
+
+          do 
+            if (allPosts[i] === lastRandomPostLink) {
+              i++;
+            } else {
+              updatedPostList.push(allPosts[i]);
+              i++
+            }
+          while (i < allPosts.length)
+
+          let randomPostLink = updatedPostList[Math.floor(Math.random() * updatedPostList.length)];
+          sessionStorage.setItem("lastRandomPostLink", randomPostLink);
+          return randomPostLink;
+      }
+  }
+
+  location.replace(linkToRandomBlogPost())
+</script>
+
+<noscript>
+  <h1>Javascript is turned off</h1>
+  <p>To get to a random post, please turn on JavaScript.</p>
+</noscript>
+
+
+

@@ -1,0 +1,55 @@
+---
+title: ""
+customTitle: true
+permalink: /notes/random
+layout: page
+---
+
+{%- assign i = site.categories.notes | size -%}
+
+<script>
+
+  const allNotes = 
+    [{%- for post in site.categories.notes -%}
+      {%- assign i = i | minus: 1 -%}
+      "{{ post.url }}"{%- unless i == 0 -%},{%- endunless -%}
+    {%- endfor -%}];
+
+  function randomNote() {
+      let lastRandomNote = sessionStorage.getItem("lastRandomNote");
+
+      if (!lastRandomNote) {
+
+        let randomNote = allNotes[Math.floor(Math.random() * allNotes.length)];
+        sessionStorage.setItem("lastRandomNote", randomNote);
+        return randomNote;
+      } else {
+
+          let updatedNoteList = [];
+          let i = 0; 
+
+          do 
+            if (allNotes[i] === lastRandomNote) {
+              i++;
+            } else {
+              updatedNoteList.push(allNotes[i]);
+              i++
+            }
+          while (i < allNotes.length)
+
+          let randomNote = updatedNoteList[Math.floor(Math.random() * updatedNoteList.length)];
+          sessionStorage.setItem("lastRandomNote", randomNote);
+          return randomNote;
+      }
+  }
+
+location.replace(randomNote())
+</script>
+
+<noscript>
+  <h1>Javascript is turned off</h1>
+  <p>To get to a random note, please turn on JavaScript.</p>
+</noscript>
+
+
+

@@ -1,0 +1,47 @@
+{% comment %}
+This section adds pretty ordinal endings (i.e. st, nd, th) to dates in
+the blog post listing.  
+{% endcomment %}
+
+
+{%- assign dateOfPost = {{post.date | date: "%d"}} -%}
+
+{%- if dateOfPost == "01" or dateOfPost == "21" or dateOfPost == "31" -%}
+	{%- assign ordinalEnding = "st" -%}
+{%- elsif dateOfPost == "02" or dateOfPost == "22" -%}
+	{%- assign ordinalEnding = "nd" -%}
+{%- elsif dateOfPost == "03" or dateOfPost == "23" -%}
+	{%- assign ordinalEnding = "rd" -%}
+{%- else %}
+	{%- assign ordinalEnding = "th" -%}
+{%- endif %}
+
+
+{%- assign firstDigitDofP = dateOfPost | slice: 0 -%}
+
+{%- if firstDigitDofP == "0" -%}
+	{%- assign prettyDateOfPost = dateOfPost | slice: 1 -%}
+{%- else -%}
+	{%- assign prettyDateOfPost = dateOfPost -%}
+{%- endif -%}
+
+
+{% comment %}
+The conditional makes the first now post link to /now instead of the post permalink.  
+{% endcomment %}
+
+
+{%- if post.category == "now" and site.categories.now[0] == post -%}
+	{% assign LinkToPost = "/now" %}
+{% else %}
+	{% assign LinkToPost = post.url %}
+{% endif %}
+
+
+
+<p><a href="{{LinkToPost}}" title="{{post.title}}" class="blog-listing-link">{{ post.title }}</a>
+<br>
+<time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B" }} {{prettyDateOfPost}}{{ ordinalEnding }}, {{ post.date | date: "%Y" }}</time></p>
+
+
+

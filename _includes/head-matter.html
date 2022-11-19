@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html {% if page.post-lang %}lang="{{page.post-lang}}" {% else %} lang="en-US" {% endif %}>
+
+<head>
+
+    {% if page.no-index or 
+    page.categories contains "rss-club" or 
+    page.categories contains "notes" %}
+    <meta name="robots" content="noindex" />
+    {% endif %}
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link rel='stylesheet' type='text/css' href='/css/main.css'>
+    {% if page.syntax %}<link rel='stylesheet' type='text/css' href='/css/code.css'>{% endif %}
+    <meta name="description" content="{% if page.description %}{{ page.description }}
+    {% else %}{{ site.description }}{% endif %}">
+    <meta name="author" content="{{ site.author }}">
+    <link rel="canonical" href="{% if page.canonical %}{{ site.url }}{{ page.canonical }}{% else %}{{ page.url | absolute_url }}{% endif %}">
+    <meta name="generator" content="Jekyll" />
+    
+    <!-- OG metadata --> 
+    <meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% unless page.social-media-image == false %}
+    <meta property="og:image" content="{% if page.social-media-image %}{{ page.social-media-image}}{% else %}{{ site.social-media-image }}{% endif %}"/>
+    {% endunless %}
+
+    <meta property="og:locale" content="{{ site.language }}">
+    <meta property="og:type" content="{% if page.og-type %}{{page.og-type}}{% else %}website{% endif %}"/>
+    <meta property="og:url" content="{{ page.url | absolute_url }}"/>
+    <meta property="og:site_name" content="{{ site.title }}">
+
+    <!-- Twitter Card --> 
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:creator" content="{{ site.twitter }}">
+    <meta name="twitter:title" content="{%- if page.title -%}{{ page.title }}{%- else -%}{{ site.title }}{%- endif -%}"/>
+    <meta name="twitter:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}"/>
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    {% unless page.social-media-image == false %}
+    <meta name="twitter:image" content="{% if page.twitter-card-image %}{{ page.twitter-card-image }}{% else %}{{ site.twitter-card-image }}{% endif %}"/>
+    {% endunless %}
+
+    <!-- favicon and iOS shortcut icon -->
+    <link rel="icon" href="{{ site.favicon }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.iOS-icon }}">
+
+    <!-- RSS feed --> 
+    <link type="application/atom+xml" rel="alternate" href="https://derekkedziora.com/feed.xml" title="{{ site.title }}" />
+    <link type="application/atom+xml" rel="alternate" href="https://derekkedziora.com/feed/notes.xml" title="{{ site.title }} | Notes" />
+    <link type="application/atom+xml" rel="alternate" href="https://derekkedziora.com/feed/essays.xml" title="{{ site.title }} | Essays" />
+    <link type="application/atom+xml" rel="alternate" href="https://derekkedziora.com/feed/now.xml" title="{{ site.title }} | Now" />
+    
+    {% if page.index %}
+    <!-- enter validation codes here --> 
+
+    {% endif %}
+</head>
