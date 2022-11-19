@@ -14,7 +14,7 @@ language: en_US
 favicon: /static/social-media-images/borshch-and-salo-favicon.jpeg
 twitter: "@good-luck-twitter-existing-in-a-few-years"
 social-media-image-url: /static/social-media-images/borshch-and-salo.jpeg
-twitter-card-image: /static/social-media-images/borshch-and-salo-twitter.jpeg
+twitter-card-image: do.jpg
 iOS-icon: /static/social-media-images/borshch-and-salo-ios.jpeg
 
 # leave these unless you are more familiar with jekyll settings
