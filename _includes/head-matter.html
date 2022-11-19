@@ -43,7 +43,6 @@
     <meta name="twitter:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}"/>
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
     <meta name="twitter:image" content="{% if page.twitter-card-image %}{{ page.twitter-card-image }}{% else %}{{ site.twitter-card-image }}{% endif %}"/>
-    {% endunless %}
 
     <!-- favicon and iOS shortcut icon -->
     <link rel="icon" href="{{ site.favicon }}">
